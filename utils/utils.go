@@ -169,9 +169,9 @@ func HelpAddURL(s string) string {
 }
 
 type WikiMenuTreeList struct {
-	Title    string
-	Url      string
-	Children []WikiMenuTreeList
+	Title    string             `json:"title"`
+	Url      string             `json:"url"`
+	Children []WikiMenuTreeList `json:"children"`
 }
 
 func SectionToTree(value []interface{}, tag string, level int) []WikiMenuTreeList {
