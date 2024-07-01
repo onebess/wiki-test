@@ -92,6 +92,13 @@ func RequestWikiApi(args map[string]string) (models.RequestResult, error) {
 	if args["action"] == "" {
 		args["action"] = "query"
 	}
+	//将语言添加进来
+	args["lang"] = WikiLanguage
+	args["variant"] = WikiLanguage
+	if WikiLanguage == "zh" {
+		args["lang"] = "zh-cn"
+		args["variant"] = "zh-cn"
+	}
 	for k, v := range args {
 		q.Add(k, v)
 	}
